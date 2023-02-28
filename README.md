@@ -1,0 +1,1 @@
+This project is used to automatically backup Apps Scripts projects to GitHub using clasp and GitHub Actions
