@@ -1,5 +1,3 @@
-// THIS IS A TEST TO CHECK GITHUB ACTION
-
 function handleMails(){
   var interval = 5; //  if the script runs every 5 minutes; change otherwise
   console.log('handleMails');
