@@ -49,28 +49,12 @@ function autoPocket(interval) {
   }
 }
 
-// BASH COMMANDS TO GET CONSUMER KEY AND ACCESS TOKEN
-
-// curl https://getpocket.com/v3/oauth/request --insecure -X POST -H "Content-Type: application/json" -H "X-Accept: application/json" -d "{\"consumer_key\":\"105369-83171a3bc7f6692009130c7\",\"redirect_uri\":\"http://www.google.com\"}"
-
-// {"code":"724eec1b-78c3-5dcb-c3c4-1b7054","state":null}
-
-// https://getpocket.com/auth/authorize?request_token=724eec1b-78c3-5dcb-c3c4-1b7054&redirect_uri=http://www.google.com
-
-// curl https://getpocket.com/v3/oauth/authorize --insecure -X POST -H "Content-Type: application/json" -H "X-Accept: application/json" -d "{\"consumer_key\":\"105369-83171a3bc7f6692009130c7\",\"code\":\"724eec1b-78c3-5dcb-c3c4-1b7054\"}"
-
-// {"access_token":"097cefee-8355-7a9a-7f63-299f3c","username":"oskar.hollinsworth@gmail.com"}
-
-// curl https://getpocket.com/v3/add --insecure -X POST -H "Content-Type: application/json" -H "X-Accept: application/json" -d "{\"consumer_key\":\"105369-83171a3bc7f6692009130c7\",\"access_token\":\"097cefee-8355-7a9a-7f63-299f3c\", \"url\": \"https://www.publishthis.email/fwd-money-stuff-jpmorgan-says-frank-was-fraud-rJZCKR69i\"}"
-
-// END OF BASH COMMANDS
-
 function pocketUrl(url){
-  // var url = 'https://www.publishthis.email/fwd-money-stuff-jpmorgan-says-frank-was-fraud-rJZCKR69i';
   console.log('pocketUrl');
   console.log('url = %s', url);
-  var consumer_key = "105369-83171a3bc7f6692009130c7";
-  var access_token = "097cefee-8355-7a9a-7f63-299f3c";
+  var scriptProperties = PropertiesService.getScriptProperties();
+  var consumer_key = scriptProperties.getProperty('consumer_key');
+  var access_token = scriptProperties.getProperty('access_token');
   var payload = { 
     "url": url,
     "consumer_key": consumer_key,
