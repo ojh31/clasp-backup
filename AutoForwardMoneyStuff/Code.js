@@ -1,5 +1,5 @@
 function handleMails(){
-  var interval = 5000; //  if the script runs every x minutes; change otherwise
+  var interval = 5000; //  if the script runs every `interval` minutes
   console.log('handleMails');
   console.log('interval = %s', interval);
   var sender = 'noreply@mail.bloombergview.com';
@@ -44,9 +44,10 @@ function pasteText(subject, text){
         payload: payload,
     };
   var response = UrlFetchApp.fetch('https://pastebin.com/api/api_post.php', options);
+  var responseText = response.getContentText();
   console.log('response code = %s', response.getResponseCode());
-  console.log(response.getContentText());
-  return response;
+  console.log(responseText);
+  return responseText;
 }
 
 function pocketUrl(url){
