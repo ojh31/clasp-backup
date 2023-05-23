@@ -1,5 +1,5 @@
 function handleMails(){
-  var interval = 5000; //  if the script runs every `interval` minutes
+  var interval = 15000; //  if the script runs every `interval` minutes
   console.log('handleMails');
   console.log('interval = %s', interval);
   var sender = 'noreply@mail.bloombergview.com';
