@@ -1,5 +1,5 @@
 function handleMails(){
-  var interval = 5; //  if the script runs every `interval` minutes
+  var interval = 10; //  if the script runs every `interval` minutes
   console.log('handleMails');
   console.log('interval = %s', interval);
   var sender = 'noreply@mail.bloombergview.com';
@@ -35,8 +35,8 @@ function pasteText(subject, text){
   var dev_key = scriptProperties.getProperty('pastebin_dev_key');
   var user_key = scriptProperties.getProperty('pastebin_user_key');
   var payload = (
-    `api_option=paste&api_user_key=${user_key}&api_paste_private=2&api_paste_name=${subject}&` +
-    `api_dev_key=${dev_key}&api_paste_code=${text}&api_paste_expiry_date=10M`
+    `api_option=paste&api_user_key=${user_key}&api_paste_private=1&api_paste_name=${subject}&` +
+    `api_dev_key=${dev_key}&api_paste_code=${text}&api_paste_expire_date=10M`
   );
   console.log('payload len = %s', payload.length);
   var options = {
